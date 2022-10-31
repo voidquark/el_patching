@@ -1,5 +1,7 @@
 # Ansible role - EL Patching
 
+[![License](https://img.shields.io/github/license/voidquark/el_patching)](LICENSE)
+
 Apply OS patches on Enterprise Linux machines (e.g. RHEL, CentOS, Rocky, Alma, Fedora ). You can decide which patching method you want to use. There are 3 methods:
 
 - `all` - Apply all patches on target host
