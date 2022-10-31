@@ -1,0 +1,17 @@
+galaxy_info:
+  author: voidquark
+  description: Apply Linux OS patches
+  company: VoidQuark
+
+  license: MIT
+
+  min_ansible_version: "2.1"
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: EL
+      versions:
+        - "8"
+        - "9"

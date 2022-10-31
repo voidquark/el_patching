@@ -1,0 +1,7 @@
+---
+# defaults file for el_patching
+el_patching_required_packages: "yum-utils"
+el_patching_reboot_timeout: 600
+el_patching_method: "security"
+el_patching_auto_reboot: false
+el_patching_check_mode: false

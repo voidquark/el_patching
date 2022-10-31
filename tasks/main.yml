@@ -1,0 +1,42 @@
+---
+# tasks file for el_patching
+
+- name: Ensure that need-restarting binary is present
+  ansible.builtin.dnf:
+    name: "{{ el_patching_required_packages }}"
+    state: present
+
+- name: Update all packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+  check_mode: "{{ el_patching_check_mode }}"
+  when: el_patching_method == "all"
+
+- name: Apply security patches only
+  ansible.builtin.dnf:
+    name: "*"
+    security: true
+    state: latest
+  check_mode: "{{ el_patching_check_mode }}"
+  when: el_patching_method == "security"
+
+- name: Apply bugfix patches only
+  ansible.builtin.dnf:
+    name: "*"
+    bugfix: true
+    state: latest
+  check_mode: "{{ el_patching_check_mode }}"
+  when: el_patching_method == "bugfix"
+
+- name: Verify if restart is required
+  ansible.builtin.command:
+    cmd: needs-restarting --reboothint
+  register: __el_patching_need_restart
+  failed_when: __el_patching_need_restart.rc > 1
+
+- name: Reboot
+  ansible.builtin.reboot:
+    reboot_timeout: "{{ el_patching_reboot_timeout }}"
+  check_mode: "{{ el_patching_check_mode }}"
+  when: el_patching_auto_reboot | bool and __el_patching_need_restart.rc == 1
