@@ -4,9 +4,9 @@
 
 Apply OS patches on Enterprise Linux machines (e.g. RHEL, CentOS, Rocky, Alma, Fedora ). You can decide which patching method you want to use. There are 3 methods:
 
-- `all` - Apply all patches on target host
-- `security` - Apply only security patches on target host
-- `bugfix` - Apply only bugfix patches on target host
+- `all` - Apply all patches on target a host
+- `security` - Apply only security patches on target a host
+- `bugfix` - Apply only bugfix patches on target a host
 
 **I strongly advise visiting the blog post for detailed information and my recommendation. - BLOG POST SOON**
 
@@ -16,7 +16,7 @@ Only dnf must be available on the target machine.
 
 ## Role Variables
 
-- **Default Variables**. Usually there is no need to change this but rather overwrite value in `host_vars` or `group_vars` if required.
+- **Default Variables**. Usually, there is no need to change this but rather overwrite the value in `host_vars` or `group_vars` if required.
 
 | Variable Name  | Default Value | Description
 | ----------- | ----------- | ----------- |
@@ -24,7 +24,7 @@ Only dnf must be available on the target machine.
 | `el_patching_auto_reboot` | `false` | By default do not reboot the target host. Only verify if a reboot is required.
 | `el_patching_reboot_timeout` | `600` | By default auto reboot is disabled but the default timeout value is set to 5 minutes. Value is in `seconds`.
 | `el_patching_method` | `"security"` | By default apply only `security` patches on the target host. Possible values `"security"/"bugfix"/"all"`
-| `el_patching_check_mode` | `false` | By default do not run tasks in check mode. You can enable check mod to simulate patching and reboot.
+| `el_patching_check_mode` | `false` | By default task is not executed in check mode. You can enable check mod to simulate patching and reboot. Keep in mind that check mode can't predict if a reboot is required.
 
 ## Dependencies
 
