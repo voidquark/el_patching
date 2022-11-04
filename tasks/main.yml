@@ -40,11 +40,6 @@
     msg: "Reboot is required to apply patches."
   when: __el_patching_need_restart.rc == 1
 
-- name: Inform user that reboot is not required
-  ansible.builtin.debug:
-    msg: "Reboot is not required to apply patches."
-  when: __el_patching_need_restart.rc == 0
-
 - name: Reboot host
   ansible.builtin.reboot:
     reboot_timeout: "{{ el_patching_reboot_timeout }}"
