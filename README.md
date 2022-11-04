@@ -24,7 +24,7 @@ Only dnf must be available on the target machine.
 | `el_patching_auto_reboot` | `false` | By default do not reboot the target host. Only verify if a reboot is required.
 | `el_patching_reboot_timeout` | `600` | By default auto reboot is disabled but the default timeout value is set to 5 minutes. Value is in `seconds`.
 | `el_patching_method` | `"security"` | By default apply only `security` patches on the target host. Possible values `"security"/"bugfix"/"all"`
-| `el_patching_check_mode` | `false` | By default task is not executed in check mode. You can enable check mod to simulate patching and reboot. Keep in mind that check mode can't predict if a reboot is required.
+| `el_patching_check_mode` | `false` | By default task is not executed in check mode. You can enable check mode to simulate patching and reboot. Keep in mind that check mode can't predict if a reboot is required.
 
 ## Dependencies
 
