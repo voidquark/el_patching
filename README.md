@@ -26,6 +26,12 @@ Only dnf must be available on the target machine.
 | `el_patching_method` | `"security"` | By default apply only `security` patches on the target host. Possible values `"security"/"bugfix"/"all"`
 | `el_patching_check_mode` | `false` | By default task is not executed in check mode. You can enable check mode to simulate patching. Keep in mind that check mode can't predict if a reboot is required. It only shows you how this role is executed on multiple/single hosts.
 
+- **group_vars** or **host_vars** variables.
+
+| Variable Name | Example Usage | Required | Description
+| ----------- | ----------- | ----------- | ----------- |
+| `el_patching_exclude_packages` | <pre>el_patching_exclude_packages:<br>&emsp;- tar<br>&emsp;- zip</pre> | No | Exclude packages during patching.
+
 ## Dependencies
 
 No Dependencies
