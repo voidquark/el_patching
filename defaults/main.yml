@@ -5,3 +5,8 @@ el_patching_reboot_timeout: 600
 el_patching_method: "security"
 el_patching_auto_reboot: false
 el_patching_check_mode: false
+
+# Optional exclude variable for group_vars or host_vars
+# el_patching_exclude_packages:
+#   - tar
+#   - zip
