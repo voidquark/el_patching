@@ -43,7 +43,7 @@ Create the following playbook.
   hosts: your_patching_inventory_group_or_host
   become: true
   roles:
-    - el_patching
+    - voidquark.el_patching
 ```
 
 ## Example execution
