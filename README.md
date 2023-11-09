@@ -8,7 +8,7 @@ Apply OS patches on Enterprise Linux (RHEL) and other Red Hat derivatives (e.g. 
 - `security` - Apply only security patches on target a host
 - `bugfix` - Apply only bugfix patches on target a host
 
-**I recommend visiting the [blog post](https://voidquark.com/ansible-linux-os-patching/) for detailed information, usage example, and my recommendation.**
+**I recommend visiting the [blog post](https://voidquark.com/blog/ansible-linux-os-patching/) for detailed information, usage example, and my recommendation.**
 
 ## Requirements
 
