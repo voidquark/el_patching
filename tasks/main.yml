@@ -10,6 +10,7 @@
   ansible.builtin.dnf:
     name: "*"
     state: latest
+    update_cache: "{{ el_patching_update_cache | default(omit) }}"
     exclude: "{{ el_patching_exclude_packages | default(omit) }}"
   when: el_patching_method == "all"
 
@@ -18,6 +19,7 @@
     name: "*"
     security: true
     state: latest
+    update_cache: "{{ el_patching_update_cache | default(omit) }}"
     exclude: "{{ el_patching_exclude_packages | default(omit) }}"
   when: el_patching_method == "security"
 
@@ -26,6 +28,7 @@
     name: "*"
     bugfix: true
     state: latest
+    update_cache: "{{ el_patching_update_cache | default(omit) }}"
     exclude: "{{ el_patching_exclude_packages | default(omit) }}"
   when: el_patching_method == "bugfix"
 

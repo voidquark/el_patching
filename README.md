@@ -30,6 +30,7 @@ Only dnf must be available on the target machine.
 | Variable Name | Example Usage | Required | Description
 | ----------- | ----------- | ----------- | ----------- |
 | `el_patching_exclude_packages` | <pre>el_patching_exclude_packages:<br>&emsp;- tar<br>&emsp;- zip</pre> | No | Exclude packages during patching.
+| `el_patching_update_cache` | `true` | No | Force dnf to check if cache is out of date and re-download if needed.
 
 ## Dependencies
 
