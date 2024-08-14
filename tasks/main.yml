@@ -37,6 +37,7 @@
     cmd: needs-restarting --reboothint
   register: __el_patching_need_restart
   failed_when: __el_patching_need_restart.rc > 1
+  changed_when: false
 
 - name: Inform user if reboot is required
   ansible.builtin.debug:
